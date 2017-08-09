@@ -55,10 +55,10 @@ public class Ersal {
         File appDir = new File("src/test/resources/file");
         File app = new File(appDir, "Ersal.zip");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("--session-override", true);
+       // capabilities.setCapability("--session-override", true);
         capabilities.setCapability(MobileCapabilityType.NO_RESET,true);
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone Simulator");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 6");
         capabilities.setCapability(IOSMobileCapabilityType.PLATFORM, "iOS");
         capabilities.setCapability(IOSMobileCapabilityType.VERSION, "10.3");
         capabilities.setCapability(IOSMobileCapabilityType.APP_NAME, "Ersal");
