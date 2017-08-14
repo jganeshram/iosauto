@@ -32,9 +32,8 @@ public class Ersal {
 //local path of node folder
         String Appium_Node_Path = "/usr/local/bin/node";
 //local path of main.js
-        String Appium_JS_Path =
-                "/Applications/Appium 3.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
-
+      //  String Appium_JS_Path = "/Applications/Appium 3.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
+        String Appium_JS_Path = "/Applications/Appium.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
 
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
@@ -52,7 +51,7 @@ public class Ersal {
 
 
 
-        File appDir = new File("src/test/resources/file");
+        File appDir = new File("src/test/resources/file/iphone");
         File app = new File(appDir, "Ersal.zip");
         DesiredCapabilities capabilities = new DesiredCapabilities();
        // capabilities.setCapability("--session-override", true);
