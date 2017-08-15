@@ -1,8 +1,7 @@
 package android;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
@@ -27,8 +26,8 @@ import java.io.IOException;
  */
 public class Ersal {
     public static AppiumDriverLocalService service;
-    //public static IOSDriver<IOSElement> driver;
-    public static AndroidDriver driver;
+    public static AndroidDriver<AndroidElement> driver;
+
 
 
     @BeforeClass
@@ -36,9 +35,7 @@ public class Ersal {
 //local path of node folder
         String Appium_Node_Path = "/usr/local/bin/node";
 //local path of main.js
-        String Appium_JS_Path =
-                "/Applications/Appium 3.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
-
+        String Appium_JS_Path = "/Applications/Appium.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
 
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
@@ -60,9 +57,9 @@ public class Ersal {
         File app = new File(appDir, "base.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
        // capabilities.setCapability("--session-override", true);
-        capabilities.setCapability(MobileCapabilityType.NO_RESET,true);
+       // capabilities.setCapability(MobileCapabilityType.NO_RESET,true);
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Nexus5x");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
         capabilities.setCapability(AndroidMobileCapabilityType.PLATFORM, "Android");
         capabilities.setCapability(AndroidMobileCapabilityType.VERSION, "7.0");
         capabilities.setCapability(AndroidMobileCapabilityType.APPLICATION_NAME, "com.fetchr.customerapp.ersal.alpha");
