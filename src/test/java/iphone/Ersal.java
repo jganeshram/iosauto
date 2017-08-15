@@ -1,4 +1,5 @@
 package iphone;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.AutomationName;
@@ -60,6 +61,7 @@ public class Ersal {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 6");
         capabilities.setCapability(IOSMobileCapabilityType.PLATFORM, "iOS");
         capabilities.setCapability(IOSMobileCapabilityType.VERSION, "10.3");
+        capabilities.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "us.fetchr.ersal.CustomerApp-Alpha");
         capabilities.setCapability(IOSMobileCapabilityType.APP_NAME, "Ersal");
         capabilities.setCapability(IOSMobileCapabilityType.LAUNCH_TIMEOUT, WaitFor.Unit.HOUR);
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
