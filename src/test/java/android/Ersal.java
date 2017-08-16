@@ -57,14 +57,16 @@ public class Ersal {
         File app = new File(appDir, "base.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
        // capabilities.setCapability("--session-override", true);
-       // capabilities.setCapability(MobileCapabilityType.NO_RESET,true);
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
-        capabilities.setCapability(AndroidMobileCapabilityType.PLATFORM, "Android");
-        capabilities.setCapability(AndroidMobileCapabilityType.VERSION, "7.0");
-        capabilities.setCapability(AndroidMobileCapabilityType.APPLICATION_NAME, "com.fetchr.customerapp.ersal.alpha");
-        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.fetchr.customerapp.ersal.alpha/us.fetchr.customer.ui.splash.SplashActivity");
-        capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY,"com.fetchr.customerapp.ersal.alpha/us.fetchr.customer.ui.splash.SplashActivity");
+        capabilities.setCapability(MobileCapabilityType.NO_RESET,false);
+        //capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
+        capabilities.setCapability("deviceName","Nexus5");
+       // capabilities.setCapability("avd", "Nexus5");
+        //capabilities.setCapability("Appium-version", "1.6.4");
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("platformVersion", "5.1");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.fetchr.driverapp");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.fetchr.driverapp.screens.authentication.LoginActivity");
+       // capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY,"com.fetchr.driverapp.screens.authentication.LoginActivity");
         capabilities.setCapability(IOSMobileCapabilityType.LAUNCH_TIMEOUT, WaitFor.Unit.HOUR);
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
         driver = new AndroidDriver(service.getUrl(), capabilities);
@@ -81,12 +83,12 @@ public class Ersal {
     }
     @Test
     public void login(){
-driver.findElement(By.id("OK")).click();
+//driver.findElement(By.id("android:id/button1")).click();
         WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("Allow")));
-driver.findElement(By.id("Allow")).click();
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("Allow")));
-        driver.findElement(By.id("Allow")).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("com.fetchr.driverapp:id/mEdtUsername")));
+driver.findElement(By.id("com.fetchr.driverapp:id/mEdtUsername")).sendKeys("ganesh");
+       // wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("Allow")));
+      //  driver.findElement(By.id("Allow")).click();
     }
 
 }

@@ -1,5 +1,5 @@
 package iphone;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.AutomationName;
