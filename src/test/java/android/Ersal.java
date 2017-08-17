@@ -13,9 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +28,7 @@ public class Ersal {
 
 
 
-    @BeforeClass
+    @BeforeSuite
     public void beforeClass() throws Exception, IOException {
 //local path of node folder
         String Appium_Node_Path = "/usr/local/bin/node";
@@ -66,13 +64,13 @@ public class Ersal {
         capabilities.setCapability("platformVersion", "5.1");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.fetchr.driverapp");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.fetchr.driverapp.screens.authentication.LoginActivity");
-       // capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY,"com.fetchr.driverapp.screens.authentication.LoginActivity");
+       capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY,"com.fetchr.driverapp.screens.authentication.LoginActivity");
         capabilities.setCapability(IOSMobileCapabilityType.LAUNCH_TIMEOUT, WaitFor.Unit.HOUR);
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
         driver = new AndroidDriver(service.getUrl(), capabilities);
     }
 
-   @AfterClass
+   @AfterSuite
    public  void afterClass() {
         if (driver != null) {
             driver.quit();
