@@ -60,8 +60,8 @@ public class Ersal {
         capabilities.setCapability(MobileCapabilityType.NO_RESET,false);
         //capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
         capabilities.setCapability("deviceName","Nexus5");
-       // capabilities.setCapability("avd", "Nexus5");
-        //capabilities.setCapability("Appium-version", "1.6.4");
+       capabilities.setCapability("avd", "Nexus5");
+        capabilities.setCapability("Appium-version", "1.6.5");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "5.1");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.fetchr.driverapp");
