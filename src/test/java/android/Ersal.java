@@ -54,7 +54,7 @@ public class Ersal {
         File appDir = new File("src/test/resources/file/android");
         File app = new File(appDir, "base.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-       // capabilities.setCapability("--session-override", true);
+       capabilities.setCapability("--session-override", true);
         capabilities.setCapability(MobileCapabilityType.NO_RESET,false);
         //capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
         capabilities.setCapability("deviceName","Nexus5");
