@@ -24,7 +24,7 @@ import java.io.IOException;
  */
 public class Ersal {
     public static AppiumDriverLocalService service;
-    public static AndroidDriver<AndroidElement> driver;
+    public static AndroidDriver driver;
 
 
 
@@ -37,7 +37,8 @@ public class Ersal {
 
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
-                               .usingAnyFreePort()
+                               .withIPAddress("127.0.0.1")
+                        .usingPort(4723)
                 .usingDriverExecutable(new File(Appium_Node_Path))
                 .withAppiumJS(new File (Appium_JS_Path))
                 );
@@ -68,6 +69,7 @@ public class Ersal {
         capabilities.setCapability(IOSMobileCapabilityType.LAUNCH_TIMEOUT, WaitFor.Unit.HOUR);
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
         driver = new AndroidDriver(service.getUrl(), capabilities);
+
     }
 
    @AfterSuite
