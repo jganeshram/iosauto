@@ -39,7 +39,7 @@ public class Ersal {
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
                               // .usingAnyFreePort()
-                                .withIPAddress("127.0.0.1")
+                                .withIPAddress("0.0.0.0")
 
                                 .usingPort(4723)
                 .usingDriverExecutable(new File(Appium_Node_Path))
