@@ -32,7 +32,7 @@ public class Ersal {
     public void beforeClass() throws Exception, IOException {
 //local path of node folder
         String Appium_Node_Path = "/usr/local/bin/node";
-//local path of main.js
+//local path of Appium main.js
         String Appium_JS_Path = "/Applications/Appium.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
 
         service = AppiumDriverLocalService

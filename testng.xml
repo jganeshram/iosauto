@@ -4,6 +4,7 @@
     <test name="Regression suite 1" >
         <classes>
             <class name="android.Ersal"/>
+            <class name="iphone.Ersal"/>
         </classes>
     </test>
 </suite>
