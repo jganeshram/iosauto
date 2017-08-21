@@ -43,6 +43,7 @@ public class Ersal {
                 .withAppiumJS(new File (Appium_JS_Path))
                 );
 
+        service.stop();
       service.start();
       service.isRunning();
 
