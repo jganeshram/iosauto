@@ -40,7 +40,7 @@ public class Ersal {
                               // .usingAnyFreePort()
                                 .withIPAddress("0.0.0.0")
 
-                                .usingPort(4723)
+                                .usingPort(4725)
                 .usingDriverExecutable(new File(Appium_Node_Path))
                 .withAppiumJS(new File (Appium_JS_Path))
                 );
