@@ -34,7 +34,6 @@ public class Ersal {
         String Appium_Node_Path = "/usr/local/bin/node";
 //local path of Appium main.js
         String Appium_JS_Path = "/Applications/Appium.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
-service.stop();
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
                                .withIPAddress("0.0.0.0")
@@ -50,7 +49,6 @@ service.stop();
 //     if (service == null || service.isRunning()) {
 //         throw new AppiumServerHasNotBeenStartedLocallyException("An appium server node is not started!");
 //     }
-
 
 
         File appDir = new File("src/test/resources/file/android");
