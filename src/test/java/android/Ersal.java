@@ -36,9 +36,9 @@ public class Ersal {
         String Appium_JS_Path = "/Applications/Appium.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
-                               .withIPAddress("127.0.0.1")
-
-                        .usingPort(4725)
+                         //      .withIPAddress("127.0.0.1")
+                     //   .usingPort(4725)
+                        .usingAnyFreePort()
                 .usingDriverExecutable(new File(Appium_Node_Path))
                 .withAppiumJS(new File (Appium_JS_Path))
                 );
