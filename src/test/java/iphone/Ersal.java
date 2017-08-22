@@ -30,7 +30,8 @@ public class Ersal {
 
     @BeforeClass
     public void beforeClass() throws Exception, IOException {
-//local path of node folder
+/*
+        //local path of node folder
         String Appium_Node_Path = "/usr/local/bin/node";
 //local path of main.js
       //  String Appium_JS_Path = "/Applications/Appium 3.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
@@ -39,13 +40,14 @@ public class Ersal {
                 .buildService(new AppiumServiceBuilder()
                               // .usingAnyFreePort()
                               //  .withIPAddress("127.0.0.1")
-.usingAnyFreePort()
+                .usingAnyFreePort()
                               //  .usingPort(4725)
                 .usingDriverExecutable(new File(Appium_Node_Path))
                 .withAppiumJS(new File (Appium_JS_Path))
                 );
 
       service.start();
+      */
       service.isRunning();
 
 //     if (service == null || service.isRunning()) {
