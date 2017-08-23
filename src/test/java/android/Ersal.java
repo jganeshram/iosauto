@@ -10,7 +10,9 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.tools.ant.taskdefs.WaitFor;
 import org.openqa.selenium.By;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
@@ -37,9 +39,9 @@ public class Ersal {
 
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
-                      .withIPAddress("127.0.0.1")
-                        .usingPort(4723)
-                        //.usingAnyFreePort()
+                     // .withIPAddress("127.0.0.1")
+                       // .usingPort(4723)
+                        .usingAnyFreePort()
                 .usingDriverExecutable(new File(Appium_Node_Path))
                 .withAppiumJS(new File (Appium_JS_Path))
                 );
