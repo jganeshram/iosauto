@@ -30,16 +30,15 @@ public class Ersal {
 
     @BeforeSuite
     public void beforeClass() throws Exception, IOException {
-
-        //local path of node folder
+//local path of node folder
         String Appium_Node_Path = "/usr/local/bin/node";
-//local path of Appium main.js
+//local path of main.js
         String Appium_JS_Path = "/Applications/Appium.app/Contents/Resources/app/node_modules/appium/build/lib/main.js";
+
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
-                               .withIPAddress("0.0.0.0")
-                        .usingPort(4725)
-                       // .usingAnyFreePort()
+                               .withIPAddress("127.0.0.1")
+                        .usingPort(4723)
                 .usingDriverExecutable(new File(Appium_Node_Path))
                 .withAppiumJS(new File (Appium_JS_Path))
                 );
@@ -47,10 +46,10 @@ public class Ersal {
       service.start();
       service.isRunning();
 
-
 //     if (service == null || service.isRunning()) {
 //         throw new AppiumServerHasNotBeenStartedLocallyException("An appium server node is not started!");
 //     }
+
 
 
         File appDir = new File("src/test/resources/file/android");
@@ -69,9 +68,8 @@ public class Ersal {
        capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY,"com.fetchr.driverapp.screens.authentication.LoginActivity");
         capabilities.setCapability(IOSMobileCapabilityType.LAUNCH_TIMEOUT, WaitFor.Unit.HOUR);
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
+       // driver = new AndroidDriver(service.getUrl(), capabilities);
         driver = new AndroidDriver(service.getUrl(), capabilities);
-
-
     }
 
    @AfterSuite
