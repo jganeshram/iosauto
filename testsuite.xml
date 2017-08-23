@@ -1,6 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="CI">
     <suite-files>
-        <suite-file path="testng.xml"/>
+        <suite-file path="testngAndroid.xml"/>
+        <suite-file path="testngiOS.xml"/>
     </suite-files>
 </suite>

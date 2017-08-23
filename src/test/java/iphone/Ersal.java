@@ -12,9 +12,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -28,7 +27,7 @@ public class Ersal {
     public static IOSDriver<IOSElement> driver;
 
 
-    @BeforeClass
+    @BeforeSuite
     public void beforeClass() throws Exception, IOException {
 //local path of node folder
         String Appium_Node_Path = "/usr/local/bin/node";
@@ -38,9 +37,9 @@ public class Ersal {
 
         service = AppiumDriverLocalService
                 .buildService(new AppiumServiceBuilder()
-                                .withIPAddress("127.0.0.1")
-                                .usingPort(4723)
-                               //.usingAnyFreePort()
+                            //    .withIPAddress("127.0.0.1")
+                             //   .usingPort(4723)
+                               .usingAnyFreePort()
                 .usingDriverExecutable(new File(Appium_Node_Path))
                 .withAppiumJS(new File (Appium_JS_Path))
                 );
@@ -70,7 +69,7 @@ public class Ersal {
         driver = new IOSDriver(service.getUrl(), capabilities);
     }
 
-   @AfterClass
+   @AfterSuite
    public  void afterClass() {
         if (driver != null) {
             driver.quit();
