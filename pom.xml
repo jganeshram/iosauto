@@ -64,16 +64,6 @@
             <version>3.4.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.5.1</version>
-            <scope>test</scope>
-
-        </dependency>
-
-
     </dependencies>
     <build>
         <plugins>
@@ -97,13 +87,6 @@
                         <suiteXmlFile>testsuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>
